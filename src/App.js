@@ -1,7 +1,9 @@
+import Form from "./Components/Form";
+
 function App() {
   return (
     <div className="App">
-      <p>Fill in data</p>
+      <Form />
       <p>Display it here</p>
     </div>
   );
