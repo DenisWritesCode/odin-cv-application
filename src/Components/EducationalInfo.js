@@ -1,6 +1,19 @@
 import React, { useState } from "react";
 
 function EducationalInfo() {
+  function handleStudyHere(e) {
+    const study = document.querySelector("#studyHere");
+    const end = document.querySelector(".educationEndDateClass");
+
+    if (study.checked) {
+      end.classList.add("hidden");
+      console.log("Added class");
+    } else {
+      end.classList.remove("hidden");
+      console.log("Removed class");
+    }
+  }
+
   return (
     <div className="educationalInfo">
       <h2>Educational Information</h2>
@@ -13,13 +26,35 @@ function EducationalInfo() {
           Study
           <input type="text" name="study" id="study" required />
         </label>
-        <label htmlFor="startDate">
+        <label htmlFor="educationStartDate">
           Start Date
-          <input type="month" name="startDate" id="startDate" required />
+          <input
+            type="month"
+            name="educationStartDate"
+            id="educationStartDate"
+            required
+          />
         </label>
-        <label htmlFor="endDate">
+
+        <label htmlFor="studyHere">
+          I currently Study Here
+          <input
+            type="checkbox"
+            name="studyHere"
+            id="studyHere"
+            onClick={handleStudyHere}
+          />
+        </label>
+
+        <label htmlFor="educationEndDate" class="educationEndDateClass">
           End Date
-          <input type="month" name="endDate" id="endDate" required />
+          <input
+            type="month"
+            name="educationEndDate"
+            id="educationEndDate"
+            class="educationEndDateClass"
+            required
+          />
         </label>
       </form>
     </div>

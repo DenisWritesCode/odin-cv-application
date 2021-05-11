@@ -2,11 +2,21 @@ import React, { useState } from "react";
 
 function WorkInfo() {
   function handleWorkHere(e) {
-    console.log(e.target);
+    const study = document.querySelector("#workHere");
+    const end = document.querySelector(".jobEndDateClass");
+
+    if (study.checked) {
+      end.classList.add("hidden");
+      console.log("Added class");
+    } else {
+      end.classList.remove("hidden");
+      console.log("Removed class");
+    }
   }
 
   return (
     <div className="workInfo">
+      <h2>Work Information</h2>
       <form id="workForm">
         <label htmlFor="companyName">
           Company
@@ -51,9 +61,15 @@ function WorkInfo() {
             onClick={handleWorkHere}
           />
         </label>
-        <label htmlFor="jobEndDate">
+        <label htmlFor="jobEndDate" class="jobEndDateClass">
           End Date
-          <input type="month" name="jobEndDate" id="jobEndDate" required />
+          <input
+            type="month"
+            name="jobEndDate"
+            id="jobEndDate"
+            class="jobEndDateClass"
+            required
+          />
         </label>
       </form>
     </div>
