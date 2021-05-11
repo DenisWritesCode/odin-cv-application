@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import GeneralInfo from "./GeneralInfo";
+import EducationalInfo from "./EducationalInfo";
+import WorkInfo from "./WorkInfo";
 
 function Form() {
   return (
-    <div>
-      <form></form>
+    <div className="formsDisplay">
+      <GeneralInfo />
+      <EducationalInfo />
+      <WorkInfo />
     </div>
   );
 }
