@@ -31,7 +31,8 @@ function GeneralInfo() {
             type="tel"
             name="phone"
             id="phone"
-            placeholder="+254-12-345-678"
+            placeholder="254-12-345-678"
+            pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{3}"
             required
           />
         </label>

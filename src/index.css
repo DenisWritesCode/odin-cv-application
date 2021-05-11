@@ -19,6 +19,10 @@ code {
   border: 1px solid black;
 }
 
+.hidden {
+  display: none;
+}
+
 #educationForm,
 #generalForm,
 #workForm {
