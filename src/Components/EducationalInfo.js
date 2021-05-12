@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 
 function EducationalInfo() {
+  const [educationNumber, setEducationNumber] = useState(0);
+  const [education, setEducation] = useState([]);
+
+  // Fix this
+  const educationInfo = document.querySelector(".educationalInfo");
+
   function handleStudyHere(e) {
     const study = document.querySelector("#studyHere");
     const end = document.querySelector(".educationEndDateClass");
@@ -14,10 +20,19 @@ function EducationalInfo() {
     }
   }
 
-  return (
-    <div className="educationalInfo">
-      <h2>Educational Information</h2>
-      <form id="educationForm">
+  function handleAddEducation(educationNumber) {
+    createForm(educationNumber);
+    setEducationNumber((prevNumber) => {
+      return prevNumber + 1;
+    });
+  }
+
+  function createForm(formNumber) {
+    const parentDiv = document.querySelector(".educationalInfo");
+    const form = document.createElement("FORM");
+    form.setAttribute("id", `education${formNumber}`);
+
+    form.innerHTML = `
         <label htmlFor="school">
           School Name
           <input type="text" name="school" id="school" required />
@@ -56,7 +71,24 @@ function EducationalInfo() {
             required
           />
         </label>
-      </form>
+`;
+
+    setEducation((prevEducation) => {
+      return prevEducation.concat(form);
+    });
+  }
+
+  return (
+    <div className="educationalInfo">
+      <h2>Educational Information</h2>
+      {education.forEach((form, index) => {
+        educationInfo.appendChild(form);
+        return 0;
+      })}
+      <hr />
+      <button onClick={() => handleAddEducation(educationNumber)}>
+        Add Education
+      </button>
     </div>
   );
 }
