@@ -46,13 +46,13 @@ function EducationalInfo() {
           />
         </label>
 
-        <label htmlFor="educationEndDate" class="educationEndDateClass">
+        <label htmlFor="educationEndDate" className="educationEndDateClass">
           End Date
           <input
             type="month"
             name="educationEndDate"
             id="educationEndDate"
-            class="educationEndDateClass"
+            className="educationEndDateClass"
             required
           />
         </label>
