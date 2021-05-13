@@ -2,7 +2,6 @@ import React from "react";
 
 function CreateEducationForm({ id, handleDelete, handleStudyHere }) {
   const formID = id;
-  console.log(formID);
   return (
     <div key={formID} className="education">
       <form>

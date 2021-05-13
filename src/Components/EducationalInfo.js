@@ -35,22 +35,6 @@ function EducationalInfo() {
               handleDelete={handleDelete}
               handleStudyHere={handleStudyHere}
             />
-
-            // <div key={formID} className="create">
-            //   <form action="#">
-            //     <label htmlFor="school">
-            //       School Name
-            //       <input type="text" name="school" id="school" required />
-            //     </label>
-            //   </form>
-            //   <button
-            //     onClick={() => {
-            //       handleDelete(formID);
-            //     }}
-            //   >
-            //     Delete
-            //   </button>
-            // </div>
           );
         })}
       </div>
