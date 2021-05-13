@@ -1,30 +1,22 @@
 import React, { useState } from "react";
 
+import CreateEducationForm from "./CreateEducationForm";
+
 function EducationalInfo() {
   const [formCount, setFormCount] = useState(0);
   const [forms, setForms] = useState([]);
-  const formDiv = document.querySelector(".forms");
+
+  function handleStudyHere(ID) {
+    const label = `#educationEndDateID${ID}`;
+    const endDate = document.querySelector(label);
+    endDate.classList.toggle("hidden");
+  }
 
   function handleDelete(key) {
     setForms(forms.filter((id) => id !== key));
   }
 
   function addForm(count) {
-    // const form = document.createElement("FORM");
-    // form.setAttribute("id", `form${count}`);
-    // const schoolName = document.createElement("INPUT");
-    // schoolName.value = `School ${count}`;
-
-    // const deleteBtn = document.createElement("BUTTON");
-    // deleteBtn.innerText = "Delete";
-    // deleteBtn.type = "button";
-    // deleteBtn.onclick = function () {
-    //   handleDelete(form.id);
-    // };
-
-    // form.appendChild(schoolName);
-    // form.appendChild(deleteBtn);
-
     setForms((forms) => forms.concat(count));
 
     setFormCount((formCount) => formCount + 1);
@@ -37,21 +29,28 @@ function EducationalInfo() {
       <div className="forms">
         {forms.map((formID) => {
           return (
-            <div key={formID} className="create">
-              <form action="#">
-                <label htmlFor="school">
-                  School Name
-                  <input type="text" name="school" id="school" required />
-                </label>
-              </form>
-              <button
-                onClick={() => {
-                  handleDelete(formID);
-                }}
-              >
-                Delete
-              </button>
-            </div>
+            <CreateEducationForm
+              key={formID}
+              id={formID}
+              handleDelete={handleDelete}
+              handleStudyHere={handleStudyHere}
+            />
+
+            // <div key={formID} className="create">
+            //   <form action="#">
+            //     <label htmlFor="school">
+            //       School Name
+            //       <input type="text" name="school" id="school" required />
+            //     </label>
+            //   </form>
+            //   <button
+            //     onClick={() => {
+            //       handleDelete(formID);
+            //     }}
+            //   >
+            //     Delete
+            //   </button>
+            // </div>
           );
         })}
       </div>
