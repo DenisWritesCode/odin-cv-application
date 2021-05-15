@@ -10,7 +10,7 @@ function CreateEducationForm({ id, handleDelete, handleStudyHere }) {
           <input type="text" name="school" id="school" required />
         </label>
         <label htmlFor="study">
-          Study
+          Area of Study
           <input type="text" name="study" id="study" required />
         </label>
         <label htmlFor="educationStartDate">
