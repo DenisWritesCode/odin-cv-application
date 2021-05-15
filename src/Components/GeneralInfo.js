@@ -77,7 +77,7 @@ function GeneralInfo({ personal, setPersonal }) {
           />
           <small>Format: 254-12-345-678</small>
         </label>
-        <button type="submit">Done</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
