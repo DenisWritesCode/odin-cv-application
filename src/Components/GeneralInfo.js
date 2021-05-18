@@ -39,7 +39,7 @@ function GeneralInfo({ personal, setPersonal }) {
             type="text"
             name="fullName"
             id="fullName"
-            placeholder="John Doe"
+            placeholder="First Second"
             value={personal.fullName}
             onChange={(e) => {
               handleChange(e);
